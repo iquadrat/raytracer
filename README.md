@@ -1,7 +1,7 @@
 This is a simple C++ Ray-Tracer that I wrote in 2005.
 
 The project has its home at
-`http://www.povworld.org/raytracer`
+http://www.povworld.org/raytracer
 
 On a Posix system you should be able to compile the program using
 > `g++ -O3 -march=native src/*.cpp -o raytracer`
