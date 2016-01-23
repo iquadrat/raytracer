@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002    
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: plane.cpp,v 1.9 2003/05/03 20:53:24 micha Exp $
     

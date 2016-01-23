@@ -3,7 +3,7 @@
                              -------------------
     begin                : Fri Jan 17 2003
     copyright            : (C) 2003 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
     
     $Id: transparenttransformatable.h,v 1.7 2003/05/25 20:13:33 micha Exp $
     

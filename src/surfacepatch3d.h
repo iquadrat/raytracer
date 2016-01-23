@@ -3,7 +3,7 @@
                              -------------------
     begin                : Sat Nov 30 2002
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
     
     $Id: surfacepatch3d.h,v 1.11 2003/05/03 20:53:24 micha Exp $
     

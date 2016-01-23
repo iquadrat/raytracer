@@ -3,7 +3,7 @@
                              -------------------
     begin                : Sun Jan 19 2003
     copyright            : (C) 2003 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
     
     $Id: patchobject.h,v 1.9 2003/05/25 20:13:33 micha Exp $
     

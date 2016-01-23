@@ -3,7 +3,7 @@
                              -------------------
     begin                : Thu Feb 6 2003
     copyright            : (C) 2003 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
     
     $Id: intersectionheap.h,v 1.4 2005/02/04 19:23:37 micha Exp $
     

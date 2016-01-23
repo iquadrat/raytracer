@@ -3,7 +3,7 @@
                              -------------------
     begin                : Sun Dec 1 2002
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
     
     $Id: trianglepatch.h,v 1.14 2003/05/25 20:13:33 micha Exp $
     

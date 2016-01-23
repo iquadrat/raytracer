@@ -3,7 +3,7 @@
                              -------------------
     begin                : Fri Oct 18 2002
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: pattern.cpp,v 1.5 2003/07/21 23:41:51 micha Exp $
     

@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002        
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: media3d.h,v 1.20 2003/07/15 00:36:06 micha Exp $
     

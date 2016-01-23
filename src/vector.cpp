@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002  
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: vector.cpp,v 1.9 2003/07/15 00:36:06 micha Exp $
     

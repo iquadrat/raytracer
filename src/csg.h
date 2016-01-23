@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002   
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: csg.h,v 1.32 2003/05/03 20:53:24 micha Exp $
     

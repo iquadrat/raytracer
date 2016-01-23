@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: transformatable.cpp,v 1.10 2005/02/04 19:23:37 micha Exp $
     

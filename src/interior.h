@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 15 2002
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: interior.h,v 1.5 2003/03/03 11:44:05 micha Exp $
     

@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002    
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: prime.h,v 1.2 2002/11/30 18:02:03 micha Exp $
     

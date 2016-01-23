@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002    
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: random.h,v 1.5 2003/08/04 13:20:33 micha Exp $
     

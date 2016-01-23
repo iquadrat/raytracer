@@ -3,7 +3,7 @@
                              -------------------
     begin                : Die Jul 15 2003
     copyright            : (C) 2003 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
     
     $Id: noise.cpp,v 1.3 2003/07/21 23:41:51 micha Exp $
     

@@ -3,7 +3,7 @@
                              -------------------
     begin                : Wed Oct 16 2002        
     copyright            : (C) 2002 by Micha Riser
-    email                : mriser@gmx.net
+    email                : micha@povworld.org
 
     $Id: isosurface.h,v 1.11 2003/05/25 20:13:33 micha Exp $
     
