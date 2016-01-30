@@ -25,6 +25,7 @@
 #include "../src/random.h"
 #include "../src/types.h"
 #include "../src/vector.h"
+#include <immintrin.h>
 
 /**Noise generator.  *@author Micha Riser
   */
@@ -103,22 +104,30 @@ private:
 class PerlinNoiseCommon: public Noise<Vector3,DBL> {
 
 public:
-    PerlinNoiseCommon(DBL stddev): STDDEV(stddev) {};
+    PerlinNoiseCommon(DBL stddev):
+    inv_stdev(1.0/stddev),
+    inv_stdev_scaled(1.0/(stddev*2*2.58)) {
+        permutationTbl = (int*) _mm_malloc(514 * sizeof(int), 32);
+        gradTbl = (Vector3*) _mm_malloc(514 * sizeof(Vector3), 32);
+    };
 
     DBL evalN(const Vector3& p) const {
-        return evaluate(p) / STDDEV;
+        return evaluate(p) * inv_stdev;
     }
 
     DBL eval01(const Vector3& p) const {
         // <1% of the values are clipped
-        return clip01( evaluate(p) / (STDDEV*2*2.58)+.5 );
+        return clip01( evaluate(p) * inv_stdev_scaled +.5 );
     }
 
 protected:
-    const DBL STDDEV;
+    const DBL inv_stdev;
+    const DBL inv_stdev_scaled;
+
     /** Permutation table */
-    unsigned int permutationTbl[514]; // 256*2 + 2
-    Vector3 gradTbl[514];
+    int* permutationTbl; //[514]; // 256*2 + 2
+
+    Vector3* gradTbl; //[514];
 
     /** Is approximatly normal distributed with mean 0 and
       * standard deviation STDDEV (this value is measured
@@ -130,7 +139,7 @@ protected:
 
     DBL linInterp(DBL t, DBL a, DBL b) const {return t*(b - a) + a;}
 
-    void setupValues(DBL comp, int & gridIdx0, int & gridIdx1, DBL& dist0, DBL& dist1) const;
+    void setupValues(DBL comp, int & gridIdx0, DBL& dist0, DBL& dist1) const;
 
 };
 

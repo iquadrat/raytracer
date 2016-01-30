@@ -141,7 +141,7 @@ Pigment3D* setUpScene_Isosurface() {
 
     Scene* s = new Scene();
 
-    PerlinNoise* ng = new PerlinNoise();
+    PerlinNoise* ng =  new PerlinNoise();
     Pigment3DMapped check = Pigment3DMapped(new pattern::Granite(ng));//pattern::Checker());
 //    check.insertCol(1,Colour(0.3,0.3,1));
     check.insertCol(1,Colour(0.3,1,1));

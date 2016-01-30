@@ -25,7 +25,7 @@
 void Vector3::applyFromLeft(const Matrix &m) {
     Vector3 ret(0,0,0);
     for(int j=0; j<3; j++) {
-        for(int i=0; i<3; i++) ret[j] += m(j,i)*a[i];
+        for(int i=0; i<3; i++) ret[j] += m(j,i)*(*this)[i];
     }
     *this = ret;
 }
@@ -33,7 +33,7 @@ void Vector3::applyFromLeft(const Matrix &m) {
 void Vector3::applyFromLeftTransposed(const Matrix &m) {
     Vector3 ret(0,0,0);
     for(int j=0; j<3; j++) {
-        for(int i=0; i<3; i++) ret[j] += m(i,j)*a[i];
+        for(int i=0; i<3; i++) ret[j] += m(i,j)*(*this)[i];
     }
     *this = ret;
 }

@@ -20,6 +20,7 @@
 #endif
 
 #include <iostream>
+#include <string>
 
 #include "../src/statistics.h"
 #include "../src/render.h"
@@ -32,6 +33,7 @@
 
 int width;
 int height;
+std::string output_file_name;
 
 int parseArguments(int argc, char *argv[]) {
 
@@ -39,9 +41,9 @@ int parseArguments(int argc, char *argv[]) {
     width = 800;
     height = 600;
     int scenenumber = 8;
-    
-    for(int i=0; i<argc; i++) {
+    output_file_name = "out.ppm";
 
+    for(int i=0; i<argc; i++) {
         if (strcmp(argv[i],"-n")==0) {
             
             i++;
@@ -57,26 +59,34 @@ int parseArguments(int argc, char *argv[]) {
             i++;
             height = atoi(argv[i]);
 
+        } else if (strcmp(argv[i],"-o")==0) {
+
+           i++;
+           output_file_name = argv[i];
+
         }
-        
-        
     }
 
     return scenenumber;
 
 }
-#include "../src/sphere.h"
-Scene* globalscene;
+
+#include "noise.h"
+#include <x86intrin.h>
 
 int main(int argc, char *argv[]) {
 
-    globalscene = new Scene();
+    _mm_setcsr( _mm_getcsr() | (1<<15));  // FTZ
+    _mm_setcsr( _mm_getcsr() | (1<<6)); // DAZ
+    _MM_SET_ROUNDING_MODE(_MM_ROUND_DOWN);
+
+    unsigned int mask = _MM_GET_EXCEPTION_MASK();
+      _MM_SET_EXCEPTION_MASK(mask);
+
 
     int scenenumber = parseArguments(argc,argv);
 
     Statistics::init();
-    
-//    for(int n=0; n<100; n++) {
     
     Pigment3D* scene;
 
@@ -119,13 +129,34 @@ int main(int argc, char *argv[]) {
             case 11:
                 scene = setUpScene_PigmentTest();
                 break;
+            case 12: {
+                PerlinNoise n;
+                for(int j=0; j<10; ++j) {
+                Vector3 v(123.194, 9287.123, -9481.12);
+                Vector3 w(0.0184, -1.29874, 0.4123);
+                w.scale(0.00001);
+
+                unsigned int mem;
+                long long start = __rdtscp(&mem);
+
+                for (long long i=0; i<105L*1000*100; ++i) {
+                    n.evalN(v);
+//                    v.add(w);
+                }
+                long long stop = __rdtscp(&mem);
+                printf("%lld\n", stop - start);
+                }
+
+
+                return 0;
+            }
         }
     }
-    catch(ObjectConstructionError e) {
+    catch(ObjectConstructionError& e) {
         std::cout <<"setUpScene failed: "<<e.message<<std::endl;
         exit(1);
     }
-    PPMOutputStream pout("out.ppm",width,height);
+    PPMOutputStream pout(output_file_name, width,height);
 
     Render r( scene, &pout, width, height );
     r.doRendering();
@@ -141,11 +172,8 @@ int main(int argc, char *argv[]) {
     msampout.done();
     Statistics::global->print();*/
 
-
-        
     delete(scene);
 
-//    }
     Statistics::finish();
 
 }
